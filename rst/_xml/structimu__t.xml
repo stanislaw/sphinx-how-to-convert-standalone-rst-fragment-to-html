@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="structimu__t" kind="struct" language="C++" prot="public">
+    <compoundname>imu_t</compoundname>
+    <includes refid="imu_8h" local="no">imu.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structimu__t_1a03dc2847958c1c7f0d405eb257ee211d" prot="public" static="no" mutable="no">
+        <type><ref refid="structa429__t" kindref="compound">a429_t</ref></type>
+        <definition>a429_t imu_t::acc_x</definition>
+        <argsstring></argsstring>
+        <name>acc_x</name>
+        <qualifiedname>imu_t::acc_x</qualifiedname>
+        <briefdescription>
+<para>acceleration x axis </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/imu.h" line="24" column="10" bodyfile="include/imu.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structimu__t_1a513df5871083d419c8bf8a94919c919c" prot="public" static="no" mutable="no">
+        <type><ref refid="structa429__t" kindref="compound">a429_t</ref></type>
+        <definition>a429_t imu_t::acc_y</definition>
+        <argsstring></argsstring>
+        <name>acc_y</name>
+        <qualifiedname>imu_t::acc_y</qualifiedname>
+        <briefdescription>
+<para>acceleration y axis </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/imu.h" line="26" column="10" bodyfile="include/imu.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structimu__t_1aa0ab053a8ec0adaa179c2105de7c9d08" prot="public" static="no" mutable="no">
+        <type><ref refid="structa429__t" kindref="compound">a429_t</ref></type>
+        <definition>a429_t imu_t::acc_z</definition>
+        <argsstring></argsstring>
+        <name>acc_z</name>
+        <qualifiedname>imu_t::acc_z</qualifiedname>
+        <briefdescription>
+<para>acceleration z axis </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/imu.h" line="28" column="10" bodyfile="include/imu.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Defines IMU input record. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>a429_t</label>
+        <link refid="structa429__t"/>
+      </node>
+      <node id="1">
+        <label>imu_t</label>
+        <link refid="structimu__t"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>acc_x</edgelabel>
+          <edgelabel>acc_y</edgelabel>
+          <edgelabel>acc_z</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="include/imu.h" line="22" column="1" bodyfile="include/imu.h" bodystart="22" bodyend="29"/>
+    <listofallmembers>
+      <member refid="structimu__t_1a03dc2847958c1c7f0d405eb257ee211d" prot="public" virt="non-virtual"><scope>imu_t</scope><name>acc_x</name></member>
+      <member refid="structimu__t_1a513df5871083d419c8bf8a94919c919c" prot="public" virt="non-virtual"><scope>imu_t</scope><name>acc_y</name></member>
+      <member refid="structimu__t_1aa0ab053a8ec0adaa179c2105de7c9d08" prot="public" virt="non-virtual"><scope>imu_t</scope><name>acc_z</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

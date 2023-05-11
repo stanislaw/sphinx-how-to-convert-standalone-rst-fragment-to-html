@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="classtasks_1_1ToxEnvironment" kind="class" language="Python" prot="public">
+    <compoundname>tasks::ToxEnvironment</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">str</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">Enum</basecompoundref>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classtasks_1_1ToxEnvironment_1a71ccfe735165e6c1b76e84af5b7011e6" prot="public" static="yes" mutable="no">
+        <type>str</type>
+        <definition>str tasks.ToxEnvironment::CHECK</definition>
+        <argsstring></argsstring>
+        <name>CHECK</name>
+        <qualifiedname>tasks.ToxEnvironment.CHECK</qualifiedname>
+        <initializer>=  &quot;check&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tasks.py" line="33" column="1" bodyfile="tasks.py" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>Enum</label>
+      </node>
+      <node id="2">
+        <label>str</label>
+      </node>
+      <node id="1">
+        <label>tasks.ToxEnvironment</label>
+        <link refid="classtasks_1_1ToxEnvironment"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>Enum</label>
+      </node>
+      <node id="2">
+        <label>str</label>
+      </node>
+      <node id="1">
+        <label>tasks.ToxEnvironment</label>
+        <link refid="classtasks_1_1ToxEnvironment"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="tasks.py" line="32" column="1" bodyfile="tasks.py" bodystart="32" bodyend="35"/>
+    <listofallmembers>
+      <member refid="classtasks_1_1ToxEnvironment_1a71ccfe735165e6c1b76e84af5b7011e6" prot="public" virt="non-virtual"><scope>tasks::ToxEnvironment</scope><name>CHECK</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

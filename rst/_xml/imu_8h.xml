@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="imu_8h" kind="file" language="C++">
+    <compoundname>imu.h</compoundname>
+    <includes local="no">stdint.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>include/imu.h</label>
+        <link refid="imu_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>stdint.h</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="structa429__t" prot="public">a429_t</innerclass>
+    <innerclass refid="structimu__t" prot="public">imu_t</innerclass>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="imu_8h_1a7c8e9c8b9aedcde6feb7b30e67203291" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int32_t</type>
+        <definition>int32_t imu</definition>
+        <argsstring>(imu_t input)</argsstring>
+        <name>imu</name>
+        <param>
+          <type><ref refid="structimu__t" kindref="compound">imu_t</ref></type>
+          <declname>input</declname>
+        </param>
+        <briefdescription>
+<para>process IMU input @input sensor input </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>processing status 0: no error, else error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/imu.h" line="36" column="9" declfile="include/imu.h" declline="36" declcolumn="9"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6" refid="structa429__t" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="8" refid="structa429__t_1a75441614cfd08601b99ea8632e2ff055" refkind="member"><highlight class="normal"><sp/><sp/>uint32_t<sp/><ref refid="structa429__t_1a75441614cfd08601b99ea8632e2ff055" kindref="member">parity</ref><sp/>:<sp/>1;</highlight></codeline>
+<codeline lineno="10" refid="structa429__t_1aa87400cedb19f2915fb3ae6ac326e25f" refkind="member"><highlight class="normal"><sp/><sp/>uint32_t<sp/><ref refid="structa429__t_1aa87400cedb19f2915fb3ae6ac326e25f" kindref="member">ssm</ref><sp/>:<sp/>2;</highlight></codeline>
+<codeline lineno="12" refid="structa429__t_1a7cd147c4161b917ff38e043f007a9744" refkind="member"><highlight class="normal"><sp/><sp/>uint32_t<sp/><ref refid="structa429__t_1a7cd147c4161b917ff38e043f007a9744" kindref="member">data</ref><sp/>:<sp/>19;</highlight></codeline>
+<codeline lineno="14" refid="structa429__t_1ad98bb65e4d0bf4e7b4b62e3b0e1cdff1" refkind="member"><highlight class="normal"><sp/><sp/>uint32_t<sp/><ref refid="structa429__t_1ad98bb65e4d0bf4e7b4b62e3b0e1cdff1" kindref="member">sdi</ref><sp/>:<sp/>2;</highlight></codeline>
+<codeline lineno="16" refid="structa429__t_1ace59222c81b691f1552eb043785e2a4e" refkind="member"><highlight class="normal"><sp/><sp/>uint32_t<sp/><ref refid="structa429__t_1ace59222c81b691f1552eb043785e2a4e" kindref="member">label</ref><sp/>:<sp/>8;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal">}<sp/><ref refid="structa429__t" kindref="compound">a429_t</ref>;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22" refid="structimu__t" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="24" refid="structimu__t_1a03dc2847958c1c7f0d405eb257ee211d" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="structa429__t" kindref="compound">a429_t</ref><sp/><ref refid="structimu__t_1a03dc2847958c1c7f0d405eb257ee211d" kindref="member">acc_x</ref>;</highlight></codeline>
+<codeline lineno="26" refid="structimu__t_1a513df5871083d419c8bf8a94919c919c" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="structa429__t" kindref="compound">a429_t</ref><sp/><ref refid="structimu__t_1a513df5871083d419c8bf8a94919c919c" kindref="member">acc_y</ref>;</highlight></codeline>
+<codeline lineno="28" refid="structimu__t_1aa0ab053a8ec0adaa179c2105de7c9d08" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="structa429__t" kindref="compound">a429_t</ref><sp/><ref refid="structimu__t_1aa0ab053a8ec0adaa179c2105de7c9d08" kindref="member">acc_z</ref>;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal">}<sp/><ref refid="structimu__t" kindref="compound">imu_t</ref>;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36" refid="imu_8h_1a7c8e9c8b9aedcde6feb7b30e67203291" refkind="member"><highlight class="normal">int32_t<sp/><ref refid="imu_8h_1a7c8e9c8b9aedcde6feb7b30e67203291" kindref="member">imu</ref>(<ref refid="structimu__t" kindref="compound">imu_t</ref><sp/>input);</highlight></codeline>
+    </programlisting>
+    <location file="include/imu.h"/>
+  </compounddef>
+</doxygen>

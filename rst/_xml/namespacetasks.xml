@@ -1,0 +1,361 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="namespacetasks" kind="namespace" language="Python">
+    <compoundname>tasks</compoundname>
+    <innerclass refid="classtasks_1_1ToxEnvironment" prot="public">tasks::ToxEnvironment</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacetasks_1a29b9b58979d41a6e2f867cc94b848400" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>tasks.getargspec</definition>
+        <argsstring></argsstring>
+        <name>getargspec</name>
+        <qualifiedname>tasks.getargspec</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tasks.py" line="12" column="1" bodyfile="tasks.py" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacetasks_1a71e0ad3bae332e9c1b31f49294c57c42" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>tasks.stdout</definition>
+        <argsstring></argsstring>
+        <name>stdout</name>
+        <qualifiedname>tasks.stdout</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tasks.py" line="25" column="1" bodyfile="tasks.py" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacetasks_1a4fef3ef8571ca9a56be7f97c2732e66a" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>tasks.encoding</definition>
+        <argsstring></argsstring>
+        <name>encoding</name>
+        <qualifiedname>tasks.encoding</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tasks.py" line="26" column="1" bodyfile="tasks.py" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacetasks_1a1e06d17808b2a88ac51ea2adc58a5da1" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>tasks.closefd</definition>
+        <argsstring></argsstring>
+        <name>closefd</name>
+        <qualifiedname>tasks.closefd</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tasks.py" line="26" column="1" bodyfile="tasks.py" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacetasks_1ac4a7d26a5658e74f4c9f2aed26c09c40" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>tasks.False</definition>
+        <argsstring></argsstring>
+        <name>False</name>
+        <qualifiedname>tasks.False</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tasks.py" line="26" column="1" bodyfile="tasks.py" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacetasks_1aa4904c8678bb3040d93f34927659525d" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>tasks.buffering</definition>
+        <argsstring></argsstring>
+        <name>buffering</name>
+        <qualifiedname>tasks.buffering</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tasks.py" line="26" column="1" bodyfile="tasks.py" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacetasks_1a035ce1276dae941167509eaca6f9f95d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>invoke.runners.Result</type>
+        <definition> invoke.runners.Result tasks.run_invoke</definition>
+        <argsstring>(context, cmd, Optional[dict] environment=None, bool warn=False)</argsstring>
+        <name>run_invoke</name>
+        <qualifiedname>tasks.run_invoke</qualifiedname>
+        <param>
+          <type>context</type>
+          <defname>context</defname>
+        </param>
+        <param>
+          <type>cmd</type>
+          <defname>cmd</defname>
+        </param>
+        <param>
+          <type>Optional</type>
+          <declname>environment</declname>
+          <array>[dict]</array>
+          <defval>None</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>warn</declname>
+          <defval><ref refid="namespacetasks_1ac4a7d26a5658e74f4c9f2aed26c09c40" kindref="member">False</ref></defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tasks.py" line="36" column="1" bodyfile="tasks.py" bodystart="41" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacetasks_1ac773200323a7352440f1eb38a1714765" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>invoke.runners.Result</type>
+        <definition> invoke.runners.Result tasks.run_invoke_with_tox</definition>
+        <argsstring>(context, ToxEnvironment environment_type, str command)</argsstring>
+        <name>run_invoke_with_tox</name>
+        <qualifiedname>tasks.run_invoke_with_tox</qualifiedname>
+        <param>
+          <type>context</type>
+          <defname>context</defname>
+        </param>
+        <param>
+          <type><ref refid="classtasks_1_1ToxEnvironment" kindref="compound">ToxEnvironment</ref></type>
+          <declname>environment_type</declname>
+        </param>
+        <param>
+          <type>str</type>
+          <declname>command</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tasks.py" line="55" column="1" bodyfile="tasks.py" bodystart="59" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacetasks_1a05b1917f483d2cdd1112e8c26bf2260d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def tasks.clean</definition>
+        <argsstring>(context)</argsstring>
+        <name>clean</name>
+        <qualifiedname>tasks.clean</qualifiedname>
+        <param>
+          <type>context</type>
+          <defname>context</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tasks.py" line="74" column="1" bodyfile="tasks.py" bodystart="74" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacetasks_1ab8d13c71175154e4fbd050f4bbe3d69c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def tasks.bitfield</definition>
+        <argsstring>(context, input, output, lanes, bits)</argsstring>
+        <name>bitfield</name>
+        <qualifiedname>tasks.bitfield</qualifiedname>
+        <param>
+          <type>context</type>
+          <defname>context</defname>
+        </param>
+        <param>
+          <type>input</type>
+          <defname>input</defname>
+        </param>
+        <param>
+          <type>output</type>
+          <defname>output</defname>
+        </param>
+        <param>
+          <type>lanes</type>
+          <defname>lanes</defname>
+        </param>
+        <param>
+          <type>bits</type>
+          <defname>bits</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tasks.py" line="83" column="1" bodyfile="tasks.py" bodystart="83" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacetasks_1ae456d61d4d7fe95476fd38f105b6fe0b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def tasks.cairosvg</definition>
+        <argsstring>(context, input, output)</argsstring>
+        <name>cairosvg</name>
+        <qualifiedname>tasks.cairosvg</qualifiedname>
+        <param>
+          <type>context</type>
+          <defname>context</defname>
+        </param>
+        <param>
+          <type>input</type>
+          <defname>input</defname>
+        </param>
+        <param>
+          <type>output</type>
+          <defname>output</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tasks.py" line="89" column="1" bodyfile="tasks.py" bodystart="89" bodyend="94"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacetasks_1a375225527be07cb8aad3cfefa7fcaa6d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def tasks.readthedoc</definition>
+        <argsstring>(context)</argsstring>
+        <name>readthedoc</name>
+        <qualifiedname>tasks.readthedoc</qualifiedname>
+        <param>
+          <type>context</type>
+          <defname>context</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tasks.py" line="95" column="1" bodyfile="tasks.py" bodystart="95" bodyend="112"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacetasks_1a8b15cef4d5abc5a9b6499ba59bca8c7f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def tasks.strictdoc2rst</definition>
+        <argsstring>(context, input, output)</argsstring>
+        <name>strictdoc2rst</name>
+        <qualifiedname>tasks.strictdoc2rst</qualifiedname>
+        <param>
+          <type>context</type>
+          <defname>context</defname>
+        </param>
+        <param>
+          <type>input</type>
+          <defname>input</defname>
+        </param>
+        <param>
+          <type>output</type>
+          <defname>output</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tasks.py" line="113" column="1" bodyfile="tasks.py" bodystart="113" bodyend="123"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacetasks_1a1df6892d0259f01b80ad65cf8b071b6e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def tasks.doxygen</definition>
+        <argsstring>(context, config)</argsstring>
+        <name>doxygen</name>
+        <qualifiedname>tasks.doxygen</qualifiedname>
+        <param>
+          <type>context</type>
+          <defname>context</defname>
+        </param>
+        <param>
+          <type>config</type>
+          <defname>config</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tasks.py" line="124" column="1" bodyfile="tasks.py" bodystart="124" bodyend="129"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacetasks_1a76a9b5354e47f44a5b27ae8af7312144" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def tasks.build_sphinx_html</definition>
+        <argsstring>(context, input_path)</argsstring>
+        <name>build_sphinx_html</name>
+        <qualifiedname>tasks.build_sphinx_html</qualifiedname>
+        <param>
+          <type>context</type>
+          <defname>context</defname>
+        </param>
+        <param>
+          <type>input_path</type>
+          <defname>input_path</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tasks.py" line="130" column="1" bodyfile="tasks.py" bodystart="130" bodyend="139"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacetasks_1af09b0819ae5de9cb7ddbaabfa4587315" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def tasks.build_sphinx_html_programmatic</definition>
+        <argsstring>(context)</argsstring>
+        <name>build_sphinx_html_programmatic</name>
+        <qualifiedname>tasks.build_sphinx_html_programmatic</qualifiedname>
+        <param>
+          <type>context</type>
+          <defname>context</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tasks.py" line="140" column="1" bodyfile="tasks.py" bodystart="140" bodyend="147"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacetasks_1a939672a3e4950e285f6fb57dd57a0bed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def tasks.build_html</definition>
+        <argsstring>(context)</argsstring>
+        <name>build_html</name>
+        <qualifiedname>tasks.build_html</qualifiedname>
+        <param>
+          <type>context</type>
+          <defname>context</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tasks.py" line="148" column="1" bodyfile="tasks.py" bodystart="148" bodyend="175"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="tasks.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

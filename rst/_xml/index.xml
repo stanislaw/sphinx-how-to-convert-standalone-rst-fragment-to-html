@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.9.6" xml:lang="en-US">
+  <compound refid="structa429__t" kind="struct"><name>a429_t</name>
+    <member refid="structa429__t_1a75441614cfd08601b99ea8632e2ff055" kind="variable"><name>parity</name></member>
+    <member refid="structa429__t_1aa87400cedb19f2915fb3ae6ac326e25f" kind="variable"><name>ssm</name></member>
+    <member refid="structa429__t_1a7cd147c4161b917ff38e043f007a9744" kind="variable"><name>data</name></member>
+    <member refid="structa429__t_1ad98bb65e4d0bf4e7b4b62e3b0e1cdff1" kind="variable"><name>sdi</name></member>
+    <member refid="structa429__t_1ace59222c81b691f1552eb043785e2a4e" kind="variable"><name>label</name></member>
+  </compound>
+  <compound refid="structimu__t" kind="struct"><name>imu_t</name>
+    <member refid="structimu__t_1a03dc2847958c1c7f0d405eb257ee211d" kind="variable"><name>acc_x</name></member>
+    <member refid="structimu__t_1a513df5871083d419c8bf8a94919c919c" kind="variable"><name>acc_y</name></member>
+    <member refid="structimu__t_1aa0ab053a8ec0adaa179c2105de7c9d08" kind="variable"><name>acc_z</name></member>
+  </compound>
+  <compound refid="classtasks_1_1ToxEnvironment" kind="class"><name>tasks::ToxEnvironment</name>
+    <member refid="classtasks_1_1ToxEnvironment_1a71ccfe735165e6c1b76e84af5b7011e6" kind="variable"><name>CHECK</name></member>
+  </compound>
+  <compound refid="namespaceconf" kind="namespace"><name>conf</name>
+    <member refid="namespaceconf_1a2803387c30920e3e74f46eb541db430d" kind="variable"><name>project</name></member>
+    <member refid="namespaceconf_1aa11e0a8e9c47ccc775796bd64c295d2c" kind="variable"><name>copyright</name></member>
+    <member refid="namespaceconf_1a0b68e66074bc74dbb7460951f810b4c8" kind="variable"><name>author</name></member>
+    <member refid="namespaceconf_1aca7e23e5f354ec5d8e18d6b5769908c9" kind="variable"><name>release</name></member>
+    <member refid="namespaceconf_1ae475e080536acb271a0a0efe56c3ba42" kind="variable"><name>extensions</name></member>
+    <member refid="namespaceconf_1ae850ae634911b713e036b43894fdd525" kind="variable"><name>templates_path</name></member>
+    <member refid="namespaceconf_1a7ad48fb6f3e9b129c02346ea0d3527c1" kind="variable"><name>exclude_patterns</name></member>
+    <member refid="namespaceconf_1a012ba9863b958ed7baa933116f2a05b6" kind="variable"><name>html_theme</name></member>
+    <member refid="namespaceconf_1ad7fcd78de73b7505cc99717d4abf2ac1" kind="variable"><name>breathe_projects</name></member>
+    <member refid="namespaceconf_1a409a90931b7ac835c150315f93257ff4" kind="variable"><name>breathe_projects_source</name></member>
+    <member refid="namespaceconf_1a69e25286874bae3f26d68165f16c0b91" kind="variable"><name>latex_maketitle</name></member>
+    <member refid="namespaceconf_1a22dccd379199c1e183e7c397857ea491" kind="variable"><name>latex_elements</name></member>
+    <member refid="namespaceconf_1a15ff89fd36856d4530d4ed2083e6dfc7" kind="variable"><name>breathe_default_project</name></member>
+  </compound>
+  <compound refid="namespaceprogram" kind="namespace"><name>program</name>
+    <member refid="namespaceprogram_1ac434f4ed5e5f549f708363dfaa61ac2d" kind="function"><name>rst_to_html</name></member>
+  </compound>
+  <compound refid="namespacetasks" kind="namespace"><name>tasks</name>
+    <member refid="namespacetasks_1a29b9b58979d41a6e2f867cc94b848400" kind="variable"><name>getargspec</name></member>
+    <member refid="namespacetasks_1a71e0ad3bae332e9c1b31f49294c57c42" kind="variable"><name>stdout</name></member>
+    <member refid="namespacetasks_1a4fef3ef8571ca9a56be7f97c2732e66a" kind="variable"><name>encoding</name></member>
+    <member refid="namespacetasks_1a1e06d17808b2a88ac51ea2adc58a5da1" kind="variable"><name>closefd</name></member>
+    <member refid="namespacetasks_1ac4a7d26a5658e74f4c9f2aed26c09c40" kind="variable"><name>False</name></member>
+    <member refid="namespacetasks_1aa4904c8678bb3040d93f34927659525d" kind="variable"><name>buffering</name></member>
+    <member refid="namespacetasks_1a035ce1276dae941167509eaca6f9f95d" kind="function"><name>run_invoke</name></member>
+    <member refid="namespacetasks_1ac773200323a7352440f1eb38a1714765" kind="function"><name>run_invoke_with_tox</name></member>
+    <member refid="namespacetasks_1a05b1917f483d2cdd1112e8c26bf2260d" kind="function"><name>clean</name></member>
+    <member refid="namespacetasks_1ab8d13c71175154e4fbd050f4bbe3d69c" kind="function"><name>bitfield</name></member>
+    <member refid="namespacetasks_1ae456d61d4d7fe95476fd38f105b6fe0b" kind="function"><name>cairosvg</name></member>
+    <member refid="namespacetasks_1a375225527be07cb8aad3cfefa7fcaa6d" kind="function"><name>readthedoc</name></member>
+    <member refid="namespacetasks_1a8b15cef4d5abc5a9b6499ba59bca8c7f" kind="function"><name>strictdoc2rst</name></member>
+    <member refid="namespacetasks_1a1df6892d0259f01b80ad65cf8b071b6e" kind="function"><name>doxygen</name></member>
+    <member refid="namespacetasks_1a76a9b5354e47f44a5b27ae8af7312144" kind="function"><name>build_sphinx_html</name></member>
+    <member refid="namespacetasks_1af09b0819ae5de9cb7ddbaabfa4587315" kind="function"><name>build_sphinx_html_programmatic</name></member>
+    <member refid="namespacetasks_1a939672a3e4950e285f6fb57dd57a0bed" kind="function"><name>build_html</name></member>
+  </compound>
+  <compound refid="imu_8h" kind="file"><name>imu.h</name>
+    <member refid="imu_8h_1a7c8e9c8b9aedcde6feb7b30e67203291" kind="function"><name>imu</name></member>
+  </compound>
+  <compound refid="program_8py" kind="file"><name>program.py</name>
+  </compound>
+  <compound refid="README_8md" kind="file"><name>README.md</name>
+  </compound>
+  <compound refid="conf_8py" kind="file"><name>conf.py</name>
+  </compound>
+  <compound refid="tasks_8py" kind="file"><name>tasks.py</name>
+  </compound>
+  <compound refid="md_README" kind="page"><name>md_README</name>
+  </compound>
+  <compound refid="dir_d44c64559bbebec7f509842c48db8b23" kind="dir"><name>include</name>
+  </compound>
+  <compound refid="dir_aaf2441e216a7b54d848b29df776cfd7" kind="dir"><name>sphinx</name>
+  </compound>
+</doxygenindex>

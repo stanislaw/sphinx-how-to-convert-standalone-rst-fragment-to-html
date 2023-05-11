@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="md_README" kind="page">
+    <compoundname>md_README</compoundname>
+    <title>StrictDoc template for DO-178C standard</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>This DO-178C template provides an overview of the documents required as acceptable mean of compliance.</para>
+<para>The aim of the project is also to demonstrate the use of strictdoc integrating:<itemizedlist>
+<listitem><para>diagrams</para>
+</listitem><listitem><para>images</para>
+</listitem><listitem><para>bitfields</para>
+</listitem><listitem><para>Doxygen</para>
+</listitem><listitem><para>Generating pdf and html via Sphinx, publication to Read The Doc</para>
+</listitem></itemizedlist>
+</para>
+<para>For this purpose, a toy example is used.</para>
+<para>Tested on Linux.</para>
+<para>Requirements: <programlisting><codeline><highlight class="normal">apt<sp/>install<sp/>ninja-build</highlight></codeline>
+<codeline><highlight class="normal">pip<sp/>install<sp/>sphinx</highlight></codeline>
+<codeline><highlight class="normal">pip<sp/>install<sp/>sphinx_rtd_theme</highlight></codeline>
+<codeline><highlight class="normal">pip<sp/>install<sp/>bit-field</highlight></codeline>
+<codeline><highlight class="normal">pip<sp/>install<sp/>cairosvg</highlight></codeline>
+<codeline><highlight class="normal">apt<sp/>install<sp/>doxygen</highlight></codeline>
+<codeline><highlight class="normal">pip<sp/>install<sp/>breathe</highlight></codeline>
+<codeline><highlight class="normal">apt<sp/>install<sp/>latexmk</highlight></codeline>
+<codeline><highlight class="normal">apt<sp/>install<sp/>texlive-latex-base</highlight></codeline>
+<codeline><highlight class="normal">apt<sp/>install<sp/>texlive-fonts-recommended</highlight></codeline>
+<codeline><highlight class="normal">apt<sp/>install<sp/>texlive-latex-extra</highlight></codeline>
+</programlisting></para>
+<para>known limitations:<itemizedlist>
+<listitem><para>requirement shall have a title to get proper sphinx cross reference.</para>
+</listitem><listitem><para>Doxygen directives not yet supported by strictdoc 0.0.40, in the backlog</para>
+</listitem><listitem><para>assets <computeroutput>img.*</computeroutput> not displayed by strictdoc 0.0.40, in the backlog. </para>
+</listitem></itemizedlist>
+</para>
+    </detaileddescription>
+    <location file="README.md"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="structa429__t" kind="struct" language="C++" prot="public">
+    <compoundname>a429_t</compoundname>
+    <includes refid="imu_8h" local="no">imu.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structa429__t_1a75441614cfd08601b99ea8632e2ff055" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t a429_t::parity</definition>
+        <argsstring></argsstring>
+        <name>parity</name>
+        <qualifiedname>a429_t::parity</qualifiedname>
+        <bitfield> 1</bitfield>
+        <briefdescription>
+<para>parity bit </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/imu.h" line="8" column="12" bodyfile="include/imu.h" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structa429__t_1aa87400cedb19f2915fb3ae6ac326e25f" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t a429_t::ssm</definition>
+        <argsstring></argsstring>
+        <name>ssm</name>
+        <qualifiedname>a429_t::ssm</qualifiedname>
+        <bitfield> 2</bitfield>
+        <briefdescription>
+<para>functional status </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/imu.h" line="10" column="12" bodyfile="include/imu.h" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structa429__t_1a7cd147c4161b917ff38e043f007a9744" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t a429_t::data</definition>
+        <argsstring></argsstring>
+        <name>data</name>
+        <qualifiedname>a429_t::data</qualifiedname>
+        <bitfield> 19</bitfield>
+        <briefdescription>
+<para>data </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/imu.h" line="12" column="12" bodyfile="include/imu.h" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structa429__t_1ad98bb65e4d0bf4e7b4b62e3b0e1cdff1" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t a429_t::sdi</definition>
+        <argsstring></argsstring>
+        <name>sdi</name>
+        <qualifiedname>a429_t::sdi</qualifiedname>
+        <bitfield> 2</bitfield>
+        <briefdescription>
+<para>sender identifier </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/imu.h" line="14" column="12" bodyfile="include/imu.h" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structa429__t_1ace59222c81b691f1552eb043785e2a4e" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t a429_t::label</definition>
+        <argsstring></argsstring>
+        <name>label</name>
+        <qualifiedname>a429_t::label</qualifiedname>
+        <bitfield> 8</bitfield>
+        <briefdescription>
+<para>message identifier </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/imu.h" line="16" column="12" bodyfile="include/imu.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Defines ARINC 429 word bitfield. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/imu.h" line="6" column="1" bodyfile="include/imu.h" bodystart="6" bodyend="17"/>
+    <listofallmembers>
+      <member refid="structa429__t_1a7cd147c4161b917ff38e043f007a9744" prot="public" virt="non-virtual"><scope>a429_t</scope><name>data</name></member>
+      <member refid="structa429__t_1ace59222c81b691f1552eb043785e2a4e" prot="public" virt="non-virtual"><scope>a429_t</scope><name>label</name></member>
+      <member refid="structa429__t_1a75441614cfd08601b99ea8632e2ff055" prot="public" virt="non-virtual"><scope>a429_t</scope><name>parity</name></member>
+      <member refid="structa429__t_1ad98bb65e4d0bf4e7b4b62e3b0e1cdff1" prot="public" virt="non-virtual"><scope>a429_t</scope><name>sdi</name></member>
+      <member refid="structa429__t_1aa87400cedb19f2915fb3ae6ac326e25f" prot="public" virt="non-virtual"><scope>a429_t</scope><name>ssm</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,189 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="tasks_8py" kind="file" language="Python">
+    <compoundname>tasks.py</compoundname>
+    <innerclass refid="classtasks_1_1ToxEnvironment" prot="public">tasks::ToxEnvironment</innerclass>
+    <innernamespace refid="namespacetasks">tasks</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1" refid="namespacetasks" refkind="compound"><highlight class="comment">#<sp/>Invoke<sp/>is<sp/>broken<sp/>on<sp/>Python<sp/>3.11</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">#<sp/>https://github.com/pyinvoke/invoke/issues/833#issuecomment-1293148106</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>inspect</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>os</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>re</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>shutil</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>sys</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>enum<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>Enum</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>typing<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>Optional</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">not</highlight><highlight class="normal"><sp/>hasattr(inspect,<sp/></highlight><highlight class="stringliteral">&quot;getargspec&quot;</highlight><highlight class="normal">):</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>inspect.getargspec<sp/>=<sp/>inspect.getfullargspec</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>invoke<sp/><sp/></highlight><highlight class="comment">#<sp/>pylint:<sp/>disable=wrong-import-position</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>invoke<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>task<sp/><sp/></highlight><highlight class="comment">#<sp/>pylint:<sp/>disable=wrong-import-position</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">#<sp/>Specifying<sp/>encoding<sp/>because<sp/>Windows<sp/>crashes<sp/>otherwise<sp/>when<sp/>running<sp/>Invoke</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment">#<sp/>tasks<sp/>below:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="comment">#<sp/>UnicodeEncodeError:<sp/>&apos;charmap&apos;<sp/>codec<sp/>can&apos;t<sp/>encode<sp/>character<sp/>&apos;\ufffd&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="comment">#<sp/>in<sp/>position<sp/>16:<sp/>character<sp/>maps<sp/>to<sp/>&lt;undefined&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">#<sp/>People<sp/>say,<sp/>it<sp/>might<sp/>also<sp/>be<sp/>possible<sp/>to<sp/>export<sp/>PYTHONIOENCODING=utf8<sp/>but<sp/>this</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="comment">#<sp/>seems<sp/>to<sp/>work.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="comment">#<sp/>FIXME:<sp/>If<sp/>you<sp/>are<sp/>a<sp/>Windows<sp/>user<sp/>and<sp/>expert,<sp/>please<sp/>advise<sp/>on<sp/>how<sp/>to<sp/>do<sp/>this</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="comment">#<sp/>properly.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal">sys.stdout<sp/>=<sp/>open(<sp/><sp/></highlight><highlight class="comment">#<sp/>pylint:<sp/>disable=consider-using-with</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>1,<sp/></highlight><highlight class="stringliteral">&quot;w&quot;</highlight><highlight class="normal">,<sp/>encoding=</highlight><highlight class="stringliteral">&quot;utf-8&quot;</highlight><highlight class="normal">,<sp/>closefd=</highlight><highlight class="keyword">False</highlight><highlight class="normal">,<sp/>buffering=1</highlight></codeline>
+<codeline lineno="27"><highlight class="normal">)</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="comment">#<sp/>To<sp/>prevent<sp/>all<sp/>tasks<sp/>from<sp/>building<sp/>to<sp/>the<sp/>same<sp/>virtual<sp/>environment.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="comment">#<sp/>All<sp/>values<sp/>correspond<sp/>to<sp/>the<sp/>configuration<sp/>in<sp/>the<sp/>tox.ini<sp/>config<sp/>file.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32" refid="classtasks_1_1ToxEnvironment" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classtasks_1_1ToxEnvironment" kindref="compound">ToxEnvironment</ref>(str,<sp/>Enum):</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>CHECK<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;check&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="namespacetasks_1a035ce1276dae941167509eaca6f9f95d" kindref="member">run_invoke</ref>(</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>context,</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>cmd,</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>environment:<sp/>Optional[dict]<sp/>=<sp/></highlight><highlight class="keywordtype">None</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>warn:<sp/>bool<sp/>=<sp/></highlight><highlight class="keyword">False</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="41"><highlight class="normal">)<sp/>-&gt;<sp/>invoke.runners.Result:</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">one_line_command(string):</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>re.sub(</highlight><highlight class="stringliteral">&quot;\\s+&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal">,<sp/>string).strip()</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>context.run(</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>one_line_command(cmd),</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>env=environment,</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hide=</highlight><highlight class="keyword">False</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>warn=warn,</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pty=</highlight><highlight class="keyword">False</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>echo=</highlight><highlight class="keyword">True</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>)</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="namespacetasks_1ac773200323a7352440f1eb38a1714765" kindref="member">run_invoke_with_tox</ref>(</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>context,</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>environment_type:<sp/>ToxEnvironment,</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>command:<sp/>str,</highlight></codeline>
+<codeline lineno="59"><highlight class="normal">)<sp/>-&gt;<sp/>invoke.runners.Result:</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">assert</highlight><highlight class="normal"><sp/>isinstance(environment_type,<sp/>ToxEnvironment)</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">assert</highlight><highlight class="normal"><sp/>isinstance(command,<sp/>str)</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>tox_py_version<sp/>=<sp/>f</highlight><highlight class="stringliteral">&quot;py{sys.version_info.major}{sys.version_info.minor}&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespacetasks_1a035ce1276dae941167509eaca6f9f95d" kindref="member">run_invoke</ref>(</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>context,</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>f</highlight><highlight class="stringliteral">&quot;&quot;&quot;</highlight></codeline>
+<codeline lineno="66"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tox</highlight></codeline>
+<codeline lineno="67"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-e<sp/>{tox_py_version}-{environment_type.value}<sp/>--</highlight></codeline>
+<codeline lineno="68"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{command}</highlight></codeline>
+<codeline lineno="69"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;&quot;&quot;,</highlight></codeline>
+<codeline lineno="70"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>)</highlight></codeline>
+<codeline lineno="71"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="72"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="73"><highlight class="stringliteral"></highlight><highlight class="preprocessor">@task</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="namespacetasks_1a05b1917f483d2cdd1112e8c26bf2260d" kindref="member">clean</ref>(context):</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>https://unix.stackexchange.com/a/689930/77389</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>clean_command<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;</highlight></codeline>
+<codeline lineno="77"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rm<sp/>-rfv<sp/>build*</highlight></codeline>
+<codeline lineno="78"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight></codeline>
+<codeline lineno="79"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><ref refid="namespacetasks_1a035ce1276dae941167509eaca6f9f95d" kindref="member">run_invoke</ref>(context,<sp/>clean_command)</highlight></codeline>
+<codeline lineno="80"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="81"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="82"><highlight class="stringliteral"></highlight><highlight class="preprocessor">@task</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="namespacetasks_1ab8d13c71175154e4fbd050f4bbe3d69c" kindref="member">bitfield</ref>(context,<sp/>input,<sp/>output,<sp/>lanes,<sp/>bits):</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>command<sp/>=<sp/>f</highlight><highlight class="stringliteral">&quot;&quot;&quot;bit_field<sp/>--lanes<sp/>{lanes}<sp/>--bits<sp/>{bits}<sp/><sp/><sp/>--fontsize<sp/>8<sp/><sp/>--hspace<sp/>750<sp/>--vspace<sp/>40<sp/>{input}<sp/>&gt;<sp/>{output}&quot;&quot;&quot;</highlight></codeline>
+<codeline lineno="85"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><ref refid="namespacetasks_1a035ce1276dae941167509eaca6f9f95d" kindref="member">run_invoke</ref>(context,<sp/>command)</highlight></codeline>
+<codeline lineno="86"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="87"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="88"><highlight class="stringliteral"></highlight><highlight class="preprocessor">@task</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="namespacetasks_1ae456d61d4d7fe95476fd38f105b6fe0b" kindref="member">cairosvg</ref>(context,<sp/>input,<sp/>output):</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>command<sp/>=<sp/>f</highlight><highlight class="stringliteral">&quot;&quot;&quot;cairosvg<sp/>{input}<sp/>-o<sp/>{output}&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacetasks_1a035ce1276dae941167509eaca6f9f95d" kindref="member">run_invoke</ref>(context,<sp/>command)</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight><highlight class="preprocessor">@task</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="namespacetasks_1a375225527be07cb8aad3cfefa7fcaa6d" kindref="member">readthedoc</ref>(context):</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacetasks_1a8b15cef4d5abc5a9b6499ba59bca8c7f" kindref="member">strictdoc2rst</ref>(context,<sp/></highlight><highlight class="stringliteral">&quot;templates/DO-178C/doc&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;templates/DO-178C&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacetasks_1a1df6892d0259f01b80ad65cf8b071b6e" kindref="member">doxygen</ref>(context,<sp/></highlight><highlight class="stringliteral">&quot;templates/DO-178C/.doxygen&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacetasks_1ab8d13c71175154e4fbd050f4bbe3d69c" kindref="member">bitfield</ref>(</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>context,</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;templates/DO-178C/_assets/A429.json&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;templates/DO-178C/_assets/A429.svg&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1,</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>32,</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>)</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacetasks_1ae456d61d4d7fe95476fd38f105b6fe0b" kindref="member">cairosvg</ref>(</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>context,</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;templates/DO-178C/_assets/A429.svg&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;templates/DO-178C/_assets/A429.pdf&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>)</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight><highlight class="preprocessor">@task</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="namespacetasks_1a8b15cef4d5abc5a9b6499ba59bca8c7f" kindref="member">strictdoc2rst</ref>(context,<sp/>input,<sp/>output):</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>command<sp/>=<sp/>f</highlight><highlight class="stringliteral">&quot;&quot;&quot;</highlight></codeline>
+<codeline lineno="115"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>strictdoc<sp/>export</highlight></codeline>
+<codeline lineno="116"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>--output-dir<sp/>{output}</highlight></codeline>
+<codeline lineno="117"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>--project-title<sp/>DO-178C</highlight></codeline>
+<codeline lineno="118"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>--format<sp/>rst<sp/>{input}</highlight></codeline>
+<codeline lineno="119"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight></codeline>
+<codeline lineno="120"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><ref refid="namespacetasks_1a035ce1276dae941167509eaca6f9f95d" kindref="member">run_invoke</ref>(context,<sp/>command)</highlight></codeline>
+<codeline lineno="121"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="122"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="123"><highlight class="stringliteral"></highlight><highlight class="preprocessor">@task</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="namespacetasks_1a1df6892d0259f01b80ad65cf8b071b6e" kindref="member">doxygen</ref>(context,<sp/>config):</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/>command<sp/>=<sp/>f</highlight><highlight class="stringliteral">&quot;&quot;&quot;doxygen<sp/>{config}&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacetasks_1a035ce1276dae941167509eaca6f9f95d" kindref="member">run_invoke</ref>(context,<sp/>command)</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight><highlight class="preprocessor">@task</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="namespacetasks_1a76a9b5354e47f44a5b27ae8af7312144" kindref="member">build_sphinx_html</ref>(context,<sp/>input_path):</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/>path_to_build_sphinx_html<sp/>=<sp/>os.path.join(os.getcwd(),<sp/></highlight><highlight class="stringliteral">&quot;build/sphinx_html&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/>command<sp/>=<sp/>f</highlight><highlight class="stringliteral">&quot;&quot;&quot;</highlight></codeline>
+<codeline lineno="133"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cd<sp/>{input_path}<sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="134"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sphinx-build<sp/>-W<sp/>-b<sp/>singlehtml<sp/>.<sp/>{path_to_build_sphinx_html}</highlight></codeline>
+<codeline lineno="135"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight></codeline>
+<codeline lineno="136"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><ref refid="namespacetasks_1a035ce1276dae941167509eaca6f9f95d" kindref="member">run_invoke</ref>(context,<sp/>command)</highlight></codeline>
+<codeline lineno="137"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="138"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="139"><highlight class="stringliteral"></highlight><highlight class="preprocessor">@task</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="namespacetasks_1af09b0819ae5de9cb7ddbaabfa4587315" kindref="member">build_sphinx_html_programmatic</ref>(context):</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/>command<sp/>=<sp/>f</highlight><highlight class="stringliteral">&quot;&quot;&quot;</highlight></codeline>
+<codeline lineno="142"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>python<sp/>program.py</highlight></codeline>
+<codeline lineno="143"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight></codeline>
+<codeline lineno="144"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><ref refid="namespacetasks_1a035ce1276dae941167509eaca6f9f95d" kindref="member">run_invoke</ref>(context,<sp/>command)</highlight></codeline>
+<codeline lineno="145"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="146"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="147"><highlight class="stringliteral"></highlight><highlight class="preprocessor">@task</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="namespacetasks_1a939672a3e4950e285f6fb57dd57a0bed" kindref="member">build_html</ref>(context):</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>strictdoc2rst(context,<sp/>&quot;doc/&quot;,<sp/>&quot;build/strictdoc-rst/&quot;)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>os.makedirs(</highlight><highlight class="stringliteral">&quot;build/strictdoc-rst/&quot;</highlight><highlight class="normal">,<sp/>exist_ok=</highlight><highlight class="keyword">True</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacetasks_1a1df6892d0259f01b80ad65cf8b071b6e" kindref="member">doxygen</ref>(context,<sp/></highlight><highlight class="stringliteral">&quot;.doxygen&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacetasks_1ab8d13c71175154e4fbd050f4bbe3d69c" kindref="member">bitfield</ref>(</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>context,</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;_assets/A429.json&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;_assets/A429.svg&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1,</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>32,</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/>)</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacetasks_1ae456d61d4d7fe95476fd38f105b6fe0b" kindref="member">cairosvg</ref>(</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>context,</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;_assets/A429.svg&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;_assets/A429.pdf&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/>)</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/>path_to_rst_assets<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;build/strictdoc-rst/rst/_assets&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>os.path.exists(path_to_rst_assets):</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>shutil.rmtree(path_to_rst_assets)</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/>shutil.copytree(</highlight><highlight class="stringliteral">&quot;_assets&quot;</highlight><highlight class="normal">,<sp/>path_to_rst_assets)</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/>shutil.copyfile(</highlight><highlight class="stringliteral">&quot;sphinx/index.rst&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;build/strictdoc-rst/rst/index.rst&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/>shutil.copyfile(</highlight><highlight class="stringliteral">&quot;sphinx/conf.py&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;build/strictdoc-rst/rst/conf.py&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/>shutil.copytree(</highlight><highlight class="stringliteral">&quot;sphinx/themes&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;build/strictdoc-rst/rst/themes&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>build_sphinx_html(context,<sp/>input_path=&quot;build/strictdoc-rst/rst&quot;)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacetasks_1af09b0819ae5de9cb7ddbaabfa4587315" kindref="member">build_sphinx_html_programmatic</ref>(context)</highlight></codeline>
+    </programlisting>
+    <location file="tasks.py"/>
+  </compounddef>
+</doxygen>

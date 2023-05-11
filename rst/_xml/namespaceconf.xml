@@ -1,0 +1,227 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="namespaceconf" kind="namespace" language="Python">
+    <compoundname>conf</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespaceconf_1a2803387c30920e3e74f46eb541db430d" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str conf.project</definition>
+        <argsstring></argsstring>
+        <name>project</name>
+        <qualifiedname>conf.project</qualifiedname>
+        <initializer>=  &apos;DO-178C&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sphinx/conf.py" line="9" column="1" bodyfile="sphinx/conf.py" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceconf_1aa11e0a8e9c47ccc775796bd64c295d2c" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str conf.copyright</definition>
+        <argsstring></argsstring>
+        <name>copyright</name>
+        <qualifiedname>conf.copyright</qualifiedname>
+        <initializer>=  &apos;2023, company&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sphinx/conf.py" line="10" column="1" bodyfile="sphinx/conf.py" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceconf_1a0b68e66074bc74dbb7460951f810b4c8" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str conf.author</definition>
+        <argsstring></argsstring>
+        <name>author</name>
+        <qualifiedname>conf.author</qualifiedname>
+        <initializer>=  &apos;John Doe&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sphinx/conf.py" line="11" column="1" bodyfile="sphinx/conf.py" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceconf_1aca7e23e5f354ec5d8e18d6b5769908c9" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str conf.release</definition>
+        <argsstring></argsstring>
+        <name>release</name>
+        <qualifiedname>conf.release</qualifiedname>
+        <initializer>=  &apos;1.0&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sphinx/conf.py" line="12" column="1" bodyfile="sphinx/conf.py" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceconf_1ae475e080536acb271a0a0efe56c3ba42" prot="public" static="no" mutable="no">
+        <type>list</type>
+        <definition>list conf.extensions</definition>
+        <argsstring></argsstring>
+        <name>extensions</name>
+        <qualifiedname>conf.extensions</qualifiedname>
+        <initializer>=  [&apos;breathe&apos;, &apos;sphinx_rtd_theme&apos;]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sphinx/conf.py" line="17" column="1" bodyfile="sphinx/conf.py" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceconf_1ae850ae634911b713e036b43894fdd525" prot="public" static="no" mutable="no">
+        <type>list</type>
+        <definition>list conf.templates_path</definition>
+        <argsstring></argsstring>
+        <name>templates_path</name>
+        <qualifiedname>conf.templates_path</qualifiedname>
+        <initializer>=  [&apos;_templates&apos;]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sphinx/conf.py" line="19" column="1" bodyfile="sphinx/conf.py" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceconf_1a7ad48fb6f3e9b129c02346ea0d3527c1" prot="public" static="no" mutable="no">
+        <type>list</type>
+        <definition>list conf.exclude_patterns</definition>
+        <argsstring></argsstring>
+        <name>exclude_patterns</name>
+        <qualifiedname>conf.exclude_patterns</qualifiedname>
+        <initializer>=  [&apos;_build&apos;, &apos;Thumbs.db&apos;, &apos;.DS_Store&apos;]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sphinx/conf.py" line="20" column="1" bodyfile="sphinx/conf.py" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceconf_1a012ba9863b958ed7baa933116f2a05b6" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str conf.html_theme</definition>
+        <argsstring></argsstring>
+        <name>html_theme</name>
+        <qualifiedname>conf.html_theme</qualifiedname>
+        <initializer>=  &quot;sphinx_rtd_theme&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sphinx/conf.py" line="25" column="1" bodyfile="sphinx/conf.py" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceconf_1ad7fcd78de73b7505cc99717d4abf2ac1" prot="public" static="no" mutable="no">
+        <type>dict</type>
+        <definition>dict conf.breathe_projects</definition>
+        <argsstring></argsstring>
+        <name>breathe_projects</name>
+        <qualifiedname>conf.breathe_projects</qualifiedname>
+        <initializer>=  {
+    &quot;DO-178C&quot;: &quot;_xml&quot;
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sphinx/conf.py" line="26" column="1" bodyfile="sphinx/conf.py" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceconf_1a409a90931b7ac835c150315f93257ff4" prot="public" static="no" mutable="no">
+        <type>dict</type>
+        <definition>dict conf.breathe_projects_source</definition>
+        <argsstring></argsstring>
+        <name>breathe_projects_source</name>
+        <qualifiedname>conf.breathe_projects_source</qualifiedname>
+        <initializer>=  {
+    &quot;DO-178C&quot; : (
+        &quot;include&quot;, [&quot;imu.h&quot;]
+    )
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sphinx/conf.py" line="29" column="1" bodyfile="sphinx/conf.py" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceconf_1a69e25286874bae3f26d68165f16c0b91" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str conf.latex_maketitle</definition>
+        <argsstring></argsstring>
+        <name>latex_maketitle</name>
+        <qualifiedname>conf.latex_maketitle</qualifiedname>
+        <initializer>=  r&apos;&apos;&apos;
+\begin{titlepage}
+\noindent \Huge DO-178C toy example
+\sphinxlogo
+\normalsize \par Written by : John Doe\newline 
+Date: \today\newline
+Approved by : \newline
+\<ref refid="namespaceconf_1aa11e0a8e9c47ccc775796bd64c295d2c" kindref="member">copyright</ref> 2023 Company
+\end{titlepage}
+&apos;&apos;&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sphinx/conf.py" line="35" column="1" bodyfile="sphinx/conf.py" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceconf_1a22dccd379199c1e183e7c397857ea491" prot="public" static="no" mutable="no">
+        <type>dict</type>
+        <definition>dict conf.latex_elements</definition>
+        <argsstring></argsstring>
+        <name>latex_elements</name>
+        <qualifiedname>conf.latex_elements</qualifiedname>
+        <initializer>=  {
+    &apos;classoptions&apos;: &apos;,openany,oneside&apos;,
+    &apos;papersize&apos;:&apos;a4paper&apos;,
+    &apos;maketitle&apos;: <ref refid="namespaceconf_1a69e25286874bae3f26d68165f16c0b91" kindref="member">latex_maketitle</ref>
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sphinx/conf.py" line="46" column="1" bodyfile="sphinx/conf.py" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceconf_1a15ff89fd36856d4530d4ed2083e6dfc7" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str conf.breathe_default_project</definition>
+        <argsstring></argsstring>
+        <name>breathe_default_project</name>
+        <qualifiedname>conf.breathe_default_project</qualifiedname>
+        <initializer>=  &apos;DO-178C&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sphinx/conf.py" line="51" column="1" bodyfile="sphinx/conf.py" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="sphinx/conf.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

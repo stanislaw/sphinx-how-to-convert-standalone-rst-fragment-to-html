@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="README_8md" kind="file" language="Markdown">
+    <compoundname>README.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">#<sp/>StrictDoc<sp/>template<sp/>for<sp/>DO-178C<sp/>standard</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">This<sp/>DO-178C<sp/>template<sp/>provides<sp/>an<sp/>overview<sp/>of<sp/>the<sp/>documents<sp/>required<sp/>as<sp/>acceptable<sp/>mean<sp/>of<sp/>compliance.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>aim<sp/>of<sp/>the<sp/>project<sp/>is<sp/>also<sp/>to<sp/>demonstrate<sp/>the<sp/>use<sp/>of<sp/>strictdoc<sp/>integrating:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>diagrams</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>images</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>bitfields</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Doxygen</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Generating<sp/>pdf<sp/>and<sp/>html<sp/>via<sp/>Sphinx,<sp/>publication<sp/>to<sp/>Read<sp/>The<sp/>Doc</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">For<sp/>this<sp/>purpose,<sp/>a<sp/>toy<sp/>example<sp/>is<sp/>used.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Tested<sp/>on<sp/>Linux.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Requirements:</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">apt<sp/>install<sp/>ninja-build</highlight></codeline>
+<codeline><highlight class="normal">pip<sp/>install<sp/>sphinx</highlight></codeline>
+<codeline><highlight class="normal">pip<sp/>install<sp/>sphinx_rtd_theme</highlight></codeline>
+<codeline><highlight class="normal">pip<sp/>install<sp/>bit-field</highlight></codeline>
+<codeline><highlight class="normal">pip<sp/>install<sp/>cairosvg</highlight></codeline>
+<codeline><highlight class="normal">apt<sp/>install<sp/>doxygen</highlight></codeline>
+<codeline><highlight class="normal">pip<sp/>install<sp/>breathe</highlight></codeline>
+<codeline><highlight class="normal">apt<sp/>install<sp/>latexmk</highlight></codeline>
+<codeline><highlight class="normal">apt<sp/>install<sp/>texlive-latex-base</highlight></codeline>
+<codeline><highlight class="normal">apt<sp/>install<sp/>texlive-fonts-recommended</highlight></codeline>
+<codeline><highlight class="normal">apt<sp/>install<sp/>texlive-latex-extra</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">known<sp/>limitations:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>requirement<sp/>shall<sp/>have<sp/>a<sp/>title<sp/>to<sp/>get<sp/>proper<sp/>sphinx<sp/>cross<sp/>reference.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Doxygen<sp/>directives<sp/>not<sp/>yet<sp/>supported<sp/>by<sp/>strictdoc<sp/>0.0.40,<sp/>in<sp/>the<sp/>backlog</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>assets<sp/>``img.*``<sp/>not<sp/>displayed<sp/>by<sp/>strictdoc<sp/>0.0.40,<sp/>in<sp/>the<sp/>backlog.</highlight></codeline>
+    </programlisting>
+    <location file="README.md"/>
+  </compounddef>
+</doxygen>
