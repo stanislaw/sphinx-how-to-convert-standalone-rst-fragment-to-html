@@ -50,6 +50,25 @@ def rst_to_html(path_to_rst_tree, path_to_build, selected_builder):
         builder.use_index = False
         app.registry.builders["minimal"] = builder
         app.builder = app.registry.builders["minimal"]
+
+        # WIP: This essentially removes all Sphinx smartness.
+        # This may create problems if not commented out.
+        app.registry.transforms.clear()
+
+        rst = """Hello **world**
+
+.. doxygenfile:: imu.h
+   :project: DO-178C
+
+We and our store and/or access information on a device, such as cookies and process personal data, such as unique identifiers and standard information sent by a device for personalised ads and content, ad and content measurement, and audience insights, as well as to develop and improve products. With your permission we and our partners may use precise geolocation data and identification through device scanning. You may click to consent to our and our partners’ processing as described above. Alternatively you may access more detailed information and change your preferences before consenting or to refuse consenting. Please note that some processing of your personal data may not require your consent, but you have a right to object to such processing. Your preferences will apply to this website only. You can change your preferences at any time by returning to this site or visit our privacy policy.
+
+We and our store and/or access information on a device, such as cookies and process personal data, such as unique identifiers and standard information sent by a device for personalised ads and content, ad and content measurement, and audience insights, as well as to develop and improve products. With your permission we and our partners may use precise geolocation data and identification through device scanning. You may click to consent to our and our partners’ processing as described above. Alternatively you may access more detailed information and change your preferences before consenting or to refuse consenting. Please note that some processing of your personal data may not require your consent, but you have a right to object to such processing. Your preferences will apply to this website only. You can change your preferences at any time by returning to this site or visit our privacy policy.
+
+We and our store and/or access information on a device, such as cookies and process personal data, such as unique identifiers and standard information sent by a device for personalised ads and content, ad and content measurement, and audience insights, as well as to develop and improve products. With your permission we and our partners may use precise geolocation data and identification through device scanning. You may click to consent to our and our partners’ processing as described above. Alternatively you may access more detailed information and change your preferences before consenting or to refuse consenting. Please note that some processing of your personal data may not require your consent, but you have a right to object to such processing. Your preferences will apply to this website only. You can change your preferences at any time by returning to this site or visit our privacy policy.
+
+We and our store and/or access information on a device, such as cookies and process personal data, such as unique identifiers and standard information sent by a device for personalised ads and content, ad and content measurement, and audience insights, as well as to develop and improve products. With your permission we and our partners may use precise geolocation data and identification through device scanning. You may click to consent to our and our partners’ processing as described above. Alternatively you may access more detailed information and change your preferences before consenting or to refuse consenting. Please note that some processing of your personal data may not require your consent, but you have a right to object to such processing. Your preferences will apply to this website only. You can change your preferences at any time by returning to this site or visit our privacy policy.
+        """
+        builder.strictdoc_input = rst
     elif selected_builder == "single_file_html":
         # Do nothing: We are already using the native singlehtml builder.
         pass
@@ -72,6 +91,7 @@ def rst_to_html(path_to_rst_tree, path_to_build, selected_builder):
             shutil.rmtree(outdir)
 
         app.build(force_all=False)
+        app.env.clear_doc("index")
 
     end_time = time.perf_counter()
     execution_time = end_time - start_time
